@@ -1,0 +1,268 @@
+What is Devops ??
+--------------------------------------
+                       Three impartant Objective
+                             - Immediate Release
+                             - Cost Reduction  - Avoiding a wastage
+                             - Improving a Quality
+
+
+what is jenkins ??
+            CI Tool
+            Release
+                   Community  - Free  - OpenSource
+                    Enterprise  - community + (Prod Ready Plugins ) by cloudness
+           Powered by Plugins (100s+)
+           Version -2.X
+           written in Java
+                          Platform independent
+                          JRE
+           Old Name  - Hudson
+===============================================
+what is CI ?
+             Continue  Integration.
+
+what continue Integration??
+                 Auto Build --> Auto Test
+                     -------------------Immediate Feedback---------------
+
+--------------------------------------------------------SDLC----------------------------------------------------------------------
+Plan -->  Code  --> Code Review(Analyze)  -->  Build --> Unit test --> Packages  -->    Archving  -->    Depoly to QA -->    Accseptance Test  --> Code Coverage 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Jira  -->  GIT       -->        SonarQube           -->   Maven   -->   Junit   -->      Jar     -->   Artifactory   -->    Ansible    -->        Selenium          -->      Jacoco
+---------------------------------------------------AUTOMATION   --------------------------------------------------------------------------------------------------------------------------------------------
+
+Architect   -->    Dev    -->      BR    -->       QA       -->   Opration
+
+          Integrate All Phases   -->  CD  ->  Devops
+          Integrate All Tools  -------------------------------> Jenkins
+          Integrate All People  ---->   Devops
+============================================================================
+                   Jenkins
+    Integrate tools
+    Way to Automate manual Steps
+    Scheduling
+    Immediate feedback 
+
+                                  
+DEP2QA
+-------------------------------
+1 Dep  ->   9 mins.
+100 Dep  -> 9 mins
+--------------------------------
+         ??? Parrell Deployment.
+--------------------------------------------
+coding - Ansible -> Puppet - Chef
+GUI  - Octopus Deploy  - Undeploy 
+=====================================
+1000 Dep  - 1 seconds.
+=====================================
+We can use this tools to Docker - > Kubernetes deploy 1000 in 1seconds.
+
+
+Software Dev Model   - Waterfall -> Agile -> Devops
+Software Dev Arch      - Monolithic -> SOA -> Microservices
+
+what is def of tool ?
+                      - Save time
+                      - Save cost
+                      - Quantitiy and Quality of the work should be improved
+
+
+               Automation tool 
+               Continue Devlopment
+=========================================================================
+
+Other tools  -- Teamcity  - Bamboo -  UBuild - TravisCI
+https://www.devopsschool.com/path/
+
+
+Architecture of Jenkins
+-----------------------------------------
+Jenkins
+           Web (Front End  Based on GUI )  --- Managed by Human.
+                         8080
+                           GUI 
+                          Using  GUI you can 
+                                     Integrate tool
+                                     Automate Manual steps
+                                     Scheduling 
+                                      Imm Feedback
+            Backend ( Slave or worker )
+                              Would do the real work 
+                               Linux
+                               Windows
+
+https://www.devopsschool.com/blog/jenkins-architecture-explained/
+
+How to install Jenkins ?
+         Jre + JDK
+         Jenkins
+
+Jenkins
+       Integrate tools
+       Way to Automate manual Steps
+       Scheduling
+       Immediate feedback 
+---------------------------------------------------------------------------------------------------
+How to start working with  Jenkins ?
+
+--------------------  Secret formula to work with Jenkins  -------------------- 
+
+What is your Technology ?
+   
+                          Version
+  Java
+  dotnet
+  node
+  python
+  ruby
+
+Where is the code ?
+
+                   Repo location             Access
+      Git
+      svn
+      p4
+      tfs
+
+How frequently  you want this job to be triggered ?
+
+        Hourly
+
+What is your builders ?
+
+         Anything.......
+maven       pom.xml                goal          compile -> test -> package -> install -> depoly -> clean
+ant             build.xml               Target
+gradle        gradle.build           Tasks
+msbuild     default.msbuild     Target
+
+ 
+How you want a feedback of this job ?
+
+         email  -- mallesh.gouda@euphoricthought.com
+
+--------------------------------------------------------------------------------------------------------------------
+######   This Five steps to work any technology  ########
+
+1.What is your Technology ?
+           java ( check java -version in server)
+
+2.Where is the code ?
+         https://github.com/malleshgouda/AWS-ArcTech/tree/master/ALB
+https://github.com/devopsschool-labs-projects/helloworld-java-maven
+
+3.How frequently  you want this job to be triggered ?
+           Hourly
+
+4.What is your builders ?
+         maven
+
+5.How you want a feedback of this job ?
+         email to mallesh.gouda@euphoricthought.com
+-------------------------------------------------------------------------------------------
+
+--- Lab  -1 
+
+step 1 -  Setup a Jenkins
+step 2 - Setup a 3 job based on Java and maven by following rules of (mine) refer up
+setp 3 - Create a view for your project " Day1"
+step 4 - Create a folder and org your job.
+
+
+
+
+
+
+
+
+=============================================================================
+https://www.devopsschool.com/tutorial/jenkins/jenkins-installation-and-configuration.html
+
+Jenkins Installation in RHEL or CentOs (7.5)
+-----------------------------------------------------------------------------------
+$ sudo yum update
+$ yum install wget -y
+$ wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+$ rpm -ivh jdk-8u131-linux-x64.rpm
+$ sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+$ yum install jenkins 
+$ systemctl stop jenkins 
+$ systemctl start jenkins 
+$ ps -eaf | grep -i jenkins 
+
+Disable the firewall
+
+firewall-cmd --zone=public --add-port=8080/tcp --permanent
+firewall-cmd --zone=public --add-service=http --permanent
+firewall-cmd --reload
+firewall-cmd --list-all
+
+
+
+Jenkins installation to Ubuntu 20.1 Version
+-----------------------------------------------------------------
+https://www.digitalocean.com/community/tutorials/how-to-install-jenkins-on-ubuntu-20-04
+
+
+==> Create First Admin User
+
+Username: mallesh
+Password: Sanka@123
+Confirm password: Sanka@123
+Full name: malleshgouda
+E-mail address: mallesh.gouda@euphoricthought.com
+
+==> Instance Configuration
+
+Jenkins URL  :   http://3.109.217.23:8080/
+
+==> Create a New job
+
+
+
+
+
+
+
+
+
+
+
+========================================================
+         
+        Jenkins Advance 
+     --------------------------------
+
+Jenkins Security
+         Authentication --> How to access jenkins ?  Login?
+                       Delegate to  servlet container
+                        Jenkins own user database
+                        LDAP
+                        Unix user/group database
+
+         Authorization --> How has what access ?
+
+
+jenkins Users and Group
+Jenkins Backup
+Jenkins Restore
+Jenkins Command Line
+Best Practies
+Plugins -------
+Node
+Jenkins Pipeline Using  pipeline plugins
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
